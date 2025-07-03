@@ -4,6 +4,8 @@
 
 ## URL
 
+https://next-tricolor-list.vercel.app
+
 ## 概要
 
 The-View は、買い物リスト・TODO リスト・持ち物リストを一つのアプリにまとめ、用途に応じて簡単に切り替えることができるタスク管理アプリです。<br>
