@@ -7,6 +7,7 @@ import React, {
   Dispatch,
   ReactNode,
   SetStateAction,
+  Suspense,
   useContext,
 } from "react";
 
@@ -17,7 +18,11 @@ const TabProvider = ({ children }: { children: ReactNode }) => {
   const { tab, setTab } = useTabState();
 
   return (
-    <TabContext.Provider value={[tab, setTab]}>{children}</TabContext.Provider>
+    <Suspense fallback={null}>
+      <TabContext.Provider value={[tab, setTab]}>
+        {children}
+      </TabContext.Provider>
+    </Suspense>
   );
 };
 

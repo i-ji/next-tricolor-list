@@ -1,3 +1,5 @@
+"use client";
+
 import { TabType } from "@/types/types";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
