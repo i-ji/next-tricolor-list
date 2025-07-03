@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TabProvider from "@/context/TabContext";
 import ColorProvider from "@/context/ColorContext";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ColorProvider>
-          <TabProvider>{children}</TabProvider>
-        </ColorProvider>
+        <Suspense fallback={null}>
+          <ColorProvider>
+            <TabProvider>{children}</TabProvider>
+          </ColorProvider>
+        </Suspense>
       </body>
     </html>
   );

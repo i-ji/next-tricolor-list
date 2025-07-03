@@ -7,7 +7,6 @@ import React, {
   Dispatch,
   ReactNode,
   SetStateAction,
-  Suspense,
   useContext,
 } from "react";
 
@@ -21,13 +20,11 @@ const ColorProvider = ({ children }: { children: ReactNode }) => {
   const { colorVariations, setColorVariations, themeColor } = useThemeColor();
 
   return (
-    <Suspense fallback={null}>
-      <ColorContext.Provider
-        value={[colorVariations, setColorVariations, themeColor]}
-      >
-        {children}
-      </ColorContext.Provider>
-    </Suspense>
+    <ColorContext.Provider
+      value={[colorVariations, setColorVariations, themeColor]}
+    >
+      {children}
+    </ColorContext.Provider>
   );
 };
 
